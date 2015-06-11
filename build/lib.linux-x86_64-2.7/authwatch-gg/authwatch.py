@@ -1,11 +1,5 @@
 #!/usr/bin/env python
 
-#	Usage: python authWatch.py 
-#	
-# MODIFY THIS. Need to go grab scapy...need to make it spit data out into a report of some kind
-#
-
-
 import sys
 import time
 from scapy.all import *
@@ -63,18 +57,20 @@ def AddLineToDump(LineToAdd):
 		f.close()
 
 def sniffReq(p):
-	# Look for a deauth packet and print the AP BSSID, Client BSSID and the reason for the deauth.
-     if p.haslayer(Dot11Deauth):		
+	
+	if p.haslayer(Dot11Deauth):	
+		# Look for a deauth packet and print the AP BSSID, Client BSSID and the reason for the deauth.	
 		line = p.sprintf("Deauth Found from AP [%Dot11.addr2%] Client [%Dot11.addr1%], Reason [%Dot11Deauth.reason%]")
 		print line
 		AddLineToDump(line)
-	# Look for an association request packet and print the Station BSSID, Client BSSID, AP info.
-     if p.haslayer(Dot11AssoReq):
-     	line = p.sprintf("Association request from Station [%Dot11.addr1%], Client [%Dot11.addr2%], AP [%Dot11Elt.info%]")
+	if p.haslayer(Dot11AssoReq):
+		# Look for an association request packet and print the Station BSSID, Client BSSID, AP info.
+		line = p.sprintf("Association request from Station [%Dot11.addr1%], Client [%Dot11.addr2%], AP [%Dot11Elt.info%]")
 		print line
 		AddLineToDump(line)
-	# Look for an authentication packet and print the Client and AP BSSID
+	
 	if p.haslayer(Dot11Auth):
+		# Look for an authentication packet and print the Client and AP BSSID
 		line = p.sprintf("Authentication Request from [%Dot11.addr1%] to AP [%Dot11.addr2%]")
 		print p.sprintf("------------------------------------------------------------------------------------------")
 		print line

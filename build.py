@@ -41,23 +41,23 @@ def uninstall_parts(package):
 	#binary
 
 if 'uninstall' in sys.argv:
-	uninstall_parts('authwatch-gg')
+	uninstall_parts('authwatch')
 	print 'Uninstall complete'
 	sys.exit(0)
 	
 		
 #INSTALL IT
 from distutils.core import setup
-s = setup(name='authwatch-gg',
+s = setup(name='authwatch',
 	version='0.9',
 	description='Watches for certain kids of packets.',
 	license='NA',
 	author='Dale Myszewski',
 	author_email='dale.myszewski@gmail.com',
 	url='http://daleslab.com',
-	packages=['authwatch-gg'],
-	package_dir={'authwatch-gg': ''},
-	scripts=['authwatch-gg'],
+	packages=['authwatch'],
+	package_dir={'authwatch': ''},
+	scripts=['authwatch'],
 	#package_data={'': ['file.extention']},
     include_package_data=True,
     install_requires=[],

@@ -1,9 +1,12 @@
 #!/usr/bin/python
 #python -m authWatch $*
-import authwatch.main
+
 import sys
+#print sys.path
 import os
 import argparse
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from authwatch import main
 
 
 if __name__ == "__main__":

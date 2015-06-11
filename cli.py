@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import sys,subprocess,os #,SimpleHTTPServer,SocketServer
-import cli
 
 arguments = None
 
