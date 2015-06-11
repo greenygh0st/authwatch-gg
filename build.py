@@ -49,7 +49,7 @@ if 'uninstall' in sys.argv:
 #INSTALL IT
 from distutils.core import setup
 s = setup(name='authwatch-gg',
-	version='0.1.5',
+	version='0.9',
 	description='Watches for certain kids of packets.',
 	license='NA',
 	author='Dale Myszewski',
