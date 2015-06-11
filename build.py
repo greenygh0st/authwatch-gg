@@ -49,16 +49,13 @@ if 'uninstall' in sys.argv:
 #INSTALL IT
 from distutils.core import setup
 s = setup(name='authwatch',
-	version='0.9',
-	description='Watches for certain kids of packets.',
+	version='1.0',
+	description='This tool/utility allows you to monitor the wifi tubes for auth, deauth or assoc requests. You can optionally output the data to a dump file. Aircrack suite and scapy are required to use this tool.',
 	license='NA',
 	author='Dale Myszewski',
 	author_email='dale.myszewski@gmail.com',
 	url='http://daleslab.com',
 	packages=['authwatch'],
 	package_dir={'authwatch': ''},
-	scripts=['authwatch'],
-	#package_data={'': ['file.extention']},
-    include_package_data=True,
-    install_requires=[],
+	scripts=['authwatch']
 	)
