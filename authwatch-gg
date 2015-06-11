@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+#python -m authWatch $*
+import authwatch.main
+import sys
+import os
+import argparse
+
+
+if __name__ == "__main__":
+	#check root or not
+	if os.getenv('USER') != 'root':
+		print "This tool must be run as root. It just simply won't work otherwise."
+		sys.exit(1)
+
+	parser = argparse.ArgumentParser(description='Need to eventually put something here...')
+
+	parser.add_argument('-d', '--dumpfile', required=False, help='Specifiy where you would like to locate the dump file......so you can use it later. >:)')
+
+	parser.add_argument('interface')
+	args = parser.parse_args()
+	amharass.main.main(args)
