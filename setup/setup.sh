@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #Simple bash script to refresh the install
 
 DIR=$( cd "$( dirname "$0" )" && pwd )
