@@ -12,7 +12,7 @@ const = Proto()
 stores = Proto()
 
 def GetToday():
-	return str((time.strftime("%d-%m-%Y-%H:%M:%S")))
+	return str((time.strftime("%d-%m-%Y-%H%M%S")))
 
 def check_dependencies():
 	#CHECK FOR DEPENDENCIES
@@ -108,12 +108,12 @@ def main(args):
 
 	if not stores.args.dumpfile == "": #If a name is specified for the dump file then create it
 		if stores.args.verbose: print "Dump file argument given. Creating dump file."
-		stores.dumpfilename = stores.args.dumpfile + "/authwatch-gg-dump"
+		stores.dumpfilename = stores.args.dumpfile + "/authwatch-dump"
 		if not os.path.exists(stores.args.dumpfile):
 			if stores.args.verbose: print "Path does not exist trying to create it."
 			cli.execute_shell("mkdir -p " + stores.args.dumpfile)
 		lout = []
-		f = open(stores.dumpfilename,'w')
+		f = open(stores.dumpfilename,'w') #create an empty file
 		f.writelines(lout)
 		f.close()
 		if stores.args.verbose: print "Dump file with the name " + stores.dumpfilename + " successfully created."

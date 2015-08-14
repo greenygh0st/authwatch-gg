@@ -2,10 +2,9 @@
 #python -m authWatch $*
 
 import sys
-#print sys.path
 import os
 import argparse
-import authwatch.watcher #appname.file
+import authwatch.watcher
 
 
 if __name__ == "__main__":
